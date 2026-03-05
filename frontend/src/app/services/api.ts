@@ -1,5 +1,4 @@
-const BASE_URL = 'http://VITE_API_URL=https://zestful-betty-baveehub-f85022f4.koyeb.app/api/catalog';
-
+const API_URL = "https://zestful-betty-baveehub-f85022f4.koyeb.app"
 export interface Product {
   id: string | number;
   name: string;
@@ -24,7 +23,7 @@ export interface Category {
 
 export const api = {
   async getProducts(params?: Record<string, string>) {
-    const url = new URL(`${BASE_URL}/products/`);
+    const url = new URL(`${API_URL}/api/catalog/products/`);
     if (params) {
       Object.entries(params).forEach(([key, value]) => {
         if (value) url.searchParams.append(key, value);
@@ -37,13 +36,13 @@ export const api = {
   },
 
   async getProductBySlug(slug: string) {
-    const response = await fetch(`${BASE_URL}/products/${slug}/`);
+    const response = await fetch(`${API_URL}/api/catalog/products/${slug}/`);
     if (!response.ok) throw new Error('Failed to fetch product');
     return await response.json() as Product;
   },
 
   async getCategories() {
-    const response = await fetch(`${BASE_URL}/categories/`);
+    const response = await fetch(`${API_URL}/api/catalog/categories/`);
     if (!response.ok) throw new Error('Failed to fetch categories');
     const data = await response.json();
     return data.results as Category[];
