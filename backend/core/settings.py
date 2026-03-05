@@ -39,6 +39,7 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 # Application definition
 
 INSTALLED_APPS = [
+    "corsheaders",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +49,6 @@ INSTALLED_APPS = [
     # Third party
     'rest_framework',
     'rest_framework_simplejwt',
-    'corsheaders',
     # Local apps
     'apps.catalog',
     'apps.users',
@@ -56,11 +56,11 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -167,20 +167,13 @@ SIMPLE_JWT = {
 }
 
 # CORS configuration
-CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=[
-    "https://gilded-kitsune-3efe2e.netlify.app",
-    "http://localhost:5173",
-])
-
-
 CORS_ALLOWED_ORIGINS = [
-  "https://brandmans.pages.dev",
+    "https://b36aaa85.brandmans.pages.dev",
+    "http://localhost:5173",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-  "https://brandmans.pages.dev",
+    "https://b36aaa85.brandmans.pages.dev",
 ]
 
-ALLOWED_HOSTS = [
-  "zestful-betty-baveehub-f85022f4.koyeb.app",
-]
+ALLOWED_HOSTS = ["*"]
