@@ -34,3 +34,5 @@ logs
 # Temporary files
 tmp/
 temp/
+
+git rm -r --cached backend/.venv
