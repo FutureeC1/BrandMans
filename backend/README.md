@@ -22,8 +22,8 @@ Production-ready Django REST API for the Luxury Seoul Jewelry e-commerce store.
 
 ## Local Setup (Docker)
 1.  **Run with Compose**: `docker-compose up --build`.
-2.  **Access App**: `http://localhost:8000`.
-3.  **Access Admin**: `http://localhost:8000/admin`.
+2.  **Access App**: `VITE_API_URL=https://zestful-betty-baveehub-f85022f4.koyeb.app`.
+3.  **Access Admin**: `http://VITE_API_URL=https://zestful-betty-baveehub-f85022f4.koyeb.app/admin`.
 
 ## API Endpoints
 - `GET /api/catalog/health/`: API status.

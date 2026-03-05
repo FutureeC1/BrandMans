@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8000/api/catalog';
+const BASE_URL = 'http://VITE_API_URL=https://zestful-betty-baveehub-f85022f4.koyeb.app/api/catalog';
 
 export interface Product {
   id: string | number;

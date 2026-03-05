@@ -171,3 +171,16 @@ CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=[
     "https://gilded-kitsune-3efe2e.netlify.app",
     "http://localhost:5173",
 ])
+
+
+CORS_ALLOWED_ORIGINS = [
+  "https://brandmans.pages.dev",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+  "https://brandmans.pages.dev",
+]
+
+ALLOWED_HOSTS = [
+  "zestful-betty-baveehub-f85022f4.koyeb.app",
+]
